@@ -1,7 +1,7 @@
 const { mooncakeSays, env } = require("./");
 
 test("mooncake knows what to say", () => {
-	expect(mooncakeSays("woooahhh!")).toBe("(o.o) woooahhh!");
+	expect(mooncakeSays("wwoooahhh!")).toBe("(o.o) wwoooahhh!");
 });
 
 test("mooncake is not sure what to say", () => {
