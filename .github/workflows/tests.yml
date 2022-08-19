@@ -16,9 +16,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        env:
-          URL_SECRETO: ${{ secrets.URL_SECRETO }}
-        run: echo $URL_SECRETO
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
