@@ -1,9 +1,16 @@
+require("dotenv").config({ path: __dirname + "/.env" });
+
 function mooncakeSays(message) {
-  let mooncake = '(O.o)';
+	let mooncake = "(o.o)";
 
-  if ( !message ) mooncake;
+	if (!message) return mooncake;
 
-  return `${mooncake} ${message}`;
+	return `${mooncake} ${message}`;
 }
 
-module.exports.mooncakeSays = mooncakeSays;
+const env = () => {
+	console.log(process.env.URL_SECRETO);
+	return process.env.URL_SECRETO;
+};
+
+module.exports = { mooncakeSays, env };

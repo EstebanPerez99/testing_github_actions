@@ -1,8 +1,10 @@
 name: Tests
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test:
@@ -12,6 +14,8 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
+    
+    environment: dev
 
     steps:
     - uses: actions/checkout@v3
@@ -19,5 +23,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+      env :
+            URL_SECRETO : ${{ secrets.URL_SECRETO }}
+          run : |
+            echo $URL_SECRETO
     - run: npm ci
     - run: npm test

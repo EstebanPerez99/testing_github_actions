@@ -18,5 +18,8 @@
   "homepage": "https://github.com/colbyfayock/demo-github-actions#readme",
   "devDependencies": {
     "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
   }
 }
