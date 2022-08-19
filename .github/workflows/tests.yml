@@ -22,3 +22,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm test
+        env:
+          URL_SECRETO: ${{ secrets.URL_SECRETO }}
